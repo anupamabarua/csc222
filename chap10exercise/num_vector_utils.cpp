@@ -15,6 +15,11 @@ int num_vector_sum(const vector<int>& v) {
 return nums;
 }
 
-int num_vector_product(const vector<int>&) {
-	return 0;
+int num_vector_product(const vector<int>& v) {
+    int nums = 1;
+    for (int i = 0; i < v.size(); i++){
+        nums = nums * v[i];
 }
+    return nums;
+}
+
