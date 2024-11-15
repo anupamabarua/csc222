@@ -23,3 +23,6 @@ int num_vector_product(const vector<int>& v) {
     return nums;
 }
 
+int only_evens(const vector<int>& v) {
+	return 0;
+}
