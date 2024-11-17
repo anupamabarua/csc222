@@ -2,6 +2,15 @@
 #include <vector>
 using namespace std;
 
+string render_num_vector(const vector<int>& v) {
+	string s = "", str;
+	for (int i = 0; i < v.size(); i++) {
+		s += to_string(v[i]) + " ";
+}    
+	str = s.substr(0, s.size()-1);
+	return str;
+}
+
 string render_num_vector(const vector<int>& nums) {
     string s = "1 3 7";
     return s;
