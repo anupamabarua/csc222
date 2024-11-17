@@ -24,6 +24,16 @@ int num_vector_sum(const vector<int>& v) {
 return nums;
 }
 
+vector<int>  only_evens(const vector<int>& v) {
+	vector<int> s;
+	int check;	
+	for(int i = 0; i < v.size(); i++){
+	check = v[i] % 2;
+	if (check == 0) {
+		s.push_back(v[i]);
+}
+}
+
 int num_vector_product(const vector<int>& v) {
     int nums = 1;
     for (int i = 0; i < v.size(); i++){
