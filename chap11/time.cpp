@@ -4,6 +4,7 @@ using namespace std;
 struct Time {
     int hour, minute;
     double second;
+    void print();
 };
 
 void Time::print()
