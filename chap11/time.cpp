@@ -26,6 +26,14 @@ void Time::increment(double secs)
         hour += 1;
     }
 }
+
+double Time::convert_to_seconds() const
+{
+    int minutes = hour * 60 + minute;
+    double seconds = minutes * 60 + second;
+
+    return (hour * 60 + minute) * 60 + second;
+}
 int main() {
     Time current_time = {9, 14, 30.0};
     current_time.increment(500.0);
