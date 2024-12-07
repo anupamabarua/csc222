@@ -17,6 +17,6 @@ vector<string> make_list(stringstream& ss, char listnum) {
     return fruits;
 }
 vector<string> make_pairs(vector<string> fruits) {
-    vecotr<string> pairs;
+    vector<string> pairs;
     return pairs;
 }
