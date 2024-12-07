@@ -11,7 +11,7 @@ vector<string> make_list(stringstream& ss, char listnum) {
         while ((ss >> fruit) && (fruit != "==="))
             fruits.push_back(fruit);
     } else if (listnum == 2) {
-        while ((ss >> fruit) && (fruit != "===")) {}  // Skip first list
+        while ((ss >> fruit) && (fruit != "===")) {}
         while (ss >> fruit) 
             fruits.push_back(fruit);
     }
