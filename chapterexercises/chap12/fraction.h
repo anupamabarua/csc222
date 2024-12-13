@@ -1,14 +1,6 @@
-#include <string>
-#include <iostream>
-#include <vector>
-using namespace std;
-
 struct Fraction {
-int numerator, denominator;
-    Fraction(int n, int d);
+    int numerator, denominator;
+
     Fraction();
-    void print();
+    Fraction(int, int);
 };
-
-
-
