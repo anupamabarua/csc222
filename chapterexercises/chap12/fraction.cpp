@@ -21,6 +21,5 @@ Fraction::Fraction(string s){
 }
 
 string Fraction::to_string(){
-    string s = "0";
-    return s;
+    return ::to_string(numerator) + "/" + ::to_string(denominator);
 }
