@@ -17,7 +17,3 @@ Fraction::Fraction(string s){
     denominator = 0;
 }
 
-string Fraction::to_string(){
-    string s = "0";
-    return s;
-}
