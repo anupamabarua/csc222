@@ -16,3 +16,8 @@ Fraction::Fraction(string s){
     numerator = 0;
     denominator = 0;
 }
+
+string Fraction::to_string(){
+    string s = "0";
+    return s;
+}
