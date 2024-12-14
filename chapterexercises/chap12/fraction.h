@@ -1,10 +1,12 @@
-#include <iostream>
 #include <string>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 struct Fraction {
-    int numerator, denominator;
+    int numerator, denominator; 
+    Fraction(int n, int d);
     Fraction();
-    Fraction(int, int);
     Fraction(string s);
+    void Print();
 };
