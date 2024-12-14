@@ -13,7 +13,9 @@ Fraction::Fraction(){
 }
 
 Fraction::Fraction(string s){
-    numerator = 0;
-    denominator = 0;
-}
+    string slash = "/", s2 = s;
+    int slashpos = s.find(slash);
+    numerator = stoi (s.erase(slashpos));
+    denominator = stoi (s2.erase(0, slashpos+1));
 
+}
