@@ -19,3 +19,8 @@ Fraction::Fraction(string s){
     denominator = stoi (s2.erase(0, slashpos+1));
 
 }
+
+string Fraction::to_string(){
+    string s = "0";
+    return s;
+}
