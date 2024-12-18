@@ -21,5 +21,12 @@
 - Pseudocode helps with the design of helper functions
 - A helper function is a function that is not a member of a class but assists in the functionality of that class or another part of your program
 
+## 13.8
+- Deck constructer dosent initalize the cards
+- Vector memeber functions push back and pop back
+- Push back: Adds new element to the end
+- Pop back: Removes last element in the vector
 
+## 13.10
+- Merge sort: An algorithm for sorting a collection of values
 
