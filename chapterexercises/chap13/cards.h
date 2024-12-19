@@ -11,8 +11,17 @@ struct Card
 {
     Rank rank;
     Suit suit;
+    
+    bool operator==(const Card&) const;
+    bool operator>(const Card&) const;
+    bool operator<(const Card&) const;
+    bool operator>=(const Card&) const;
+    bool operator<=(const Card&) const;
+	bool operator!=(const Card&) const;
+
     Card();
     Card(Suit s, Rank r);
     std::string to_string() const;
+
 };
 
