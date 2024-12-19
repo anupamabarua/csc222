@@ -24,32 +24,57 @@ std::string Card::to_string() const
 
 bool Card::operator==(const Card& c2) const
 {
-    return false;
+    return (rank == c2.rank && suit == c2.suit);
 }
 
 
 bool Card::operator>(const Card& c2) const
 {
-    return false;
+    if (suit > c2.suit) return true;
+	if (suit < c2.suit) return false;
+	
+	if (rank > c2.rank) return true;
+	if (rank < c2.rank) return false;
+
+	return false;
 }
+
 
 bool Card::operator<(const Card& c2) const
 {
+    if (suit < c2.suit) return true;
+    if (suit > c2.suit) return false;
+
+    if (rank < c2.rank) return true;
+    if (rank > c2.rank) return false;
+
     return false;
 }
 
 bool Card::operator>=(const Card& c2) const
 {
-    return false;
+	if (suit > c2.suit) return true;
+	if (suit < c2.suit) return false;
+
+	if (rank > c2.rank) return true;
+	if (rank < c2.rank) return false;
+
+	return true;
 }
 
 bool Card::operator<=(const Card& c2) const
 {
-    return false;
+	if (suit < c2.suit) return true;
+    if (suit > c2.suit) return false;
+
+    if (rank < c2.rank) return true;
+    if (rank > c2.rank) return false;
+
+    return true;
 }
 
 
 bool Card::operator!=(const Card& c2) const
 {
-    return false;
+    return (rank != c2.rank && suit != c2.suit);
 }
