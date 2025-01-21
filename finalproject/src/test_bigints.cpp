@@ -56,3 +56,4 @@ TEST_CASE("test can compare bigints for <") {
     CHECK((i1 < i3) == true);
     CHECK((i2 < i1) == true);
     CHECK((i2 < i5) == false);
+}

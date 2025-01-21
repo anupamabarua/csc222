@@ -15,7 +15,10 @@ class BigInt
     //opertors
     bool operator==(const BigInt&) const;
     bool operator>(const BigInt&) const;
+    bool operator<(const BigInt&) const;
 
     // member functions
     string to_string() const;
 };
+
+
