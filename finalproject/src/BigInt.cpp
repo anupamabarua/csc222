@@ -86,3 +86,7 @@ bool BigInt::operator<(const BigInt& num1) const{
 bool BigInt::operator!=(const BigInt& num1) const{
     return !(*this == num1);
 }
+bool BigInt::operator<=(const BigInt& num1) const{
+    return !(*this == num1);
+}
+
