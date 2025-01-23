@@ -41,7 +41,7 @@ bool BigInt::operator<(const BigInt& num1) const {
         return false;
     }
 
-    if (!negative) { // Both are positive
+    if (!negative) { 
         if (digits.length() != num1.digits.length()) {
             return digits.length() < num1.digits.length();
         }
@@ -50,7 +50,7 @@ bool BigInt::operator<(const BigInt& num1) const {
         if (digits.length() != num1.digits.length()) {
             return digits.length() > num1.digits.length();
         }
-        return digits > num1.digits; // Reverse lexicographical comparison
+        return digits > num1.digits; 
     }
 }
 
