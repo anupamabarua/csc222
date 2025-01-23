@@ -79,10 +79,24 @@ bool BigInt::operator>(const BigInt& num1) const{
     }
     return false; // Add this return statement
 }
+bool BigInt::operator<(const BigInt& num1) const {
+    if (negative != num1.negative) {
+        return negative; // Negative is always less than positive
+    }
 
-bool BigInt::operator<(const BigInt& num1) const{
-    return (!(*this > num1) && !(*this == num1));
+    if (!negative) { // Both numbers are non-negative
+        if (digits.length() != num1.digits.length()) {
+            return digits.length() < num1.digits.length();
+        }
+        return digits < num1.digits; // Lexicographical comparison
+    } else { // Both numbers are negative
+        if (digits.length() != num1.digits.length()) {
+            return digits.length() > num1.digits.length(); // Reverse length comparison
+        }
+        return digits > num1.digits; // Reverse lexicographical comparison
+    }
 }
+
 bool BigInt::operator!=(const BigInt& num1) const{
     return !(*this == num1);
 }
