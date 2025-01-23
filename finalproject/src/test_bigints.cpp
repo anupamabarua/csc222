@@ -54,7 +54,7 @@ TEST_CASE("Test can compare BigInts for < inequality") {
 
     CHECK((i1 < i1) == false);
     CHECK((i1 < i3) == true);
-    CHECK((i2 < i1) == true);
+    CHECK((i2 < i1) == false);
     CHECK((i2 < i5) == false);
 }
 
@@ -67,8 +67,8 @@ TEST_CASE("Test can compare BigInts for != inequality") {
     BigInt i6("-54321");
 
    CHECK((i2 != i1) == true);
-   CHECK((i3 != i4) == false);
-   CHECK((i6 != i5) == false);
+   CHECK((i3 != i4) == true);
+   CHECK((i6 != i5) == true);
    CHECK((i1 != i3) == true);
 }
 
@@ -81,9 +81,9 @@ TEST_CASE("Test can compare BigInts for <= inequality") {
     BigInt i6("-54321");
 
     CHECK((i3 <= i4) == false);
-    CHECK((i2 <= i6) == true);
+    CHECK((i2 <= i6) == false);
     CHECK((i5 <= i1) == false);
-    CHECK((i4 <= i6) == false);
+    CHECK((i4 <= i6) == true);
 }
 
 TEST_CASE("Test can compare BigInts for >= inequality") {
