@@ -11,14 +11,17 @@ class BigInt
     BigInt();
     BigInt(int);
     BigInt(string);
-    
-    //opertors
+
+    //operators
     bool operator==(const BigInt&) const;
+    bool operator!=(const BigInt&) const;
     bool operator>(const BigInt&) const;
     bool operator<(const BigInt&) const;
-    bool operator!=(const BigInt&) const;
+    bool operator>=(const BigInt&) const;
     bool operator<=(const BigInt&) const;
     BigInt operator+(const BigInt&) const;
+
     // member functions
     string to_string() const;
+
 };
