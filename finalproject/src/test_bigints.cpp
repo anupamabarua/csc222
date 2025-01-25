@@ -29,18 +29,7 @@ TEST_CASE("Test can compare BigInts for equality") {
     CHECK((i1 == i3) == false);
     CHECK((i2 == i6) == false);
 }
-TEST_CASE("Test can compare BigInts for not equal") {
-    BigInt i1("12345");
-    BigInt i2("54321");
-    BigInt i3("123456");
-    BigInt i4("-654321");
-    BigInt i5("54321");
-    BigInt i6("-54321");
-    CHECK((i2 != i5) == false);
-    CHECK((i1 != i2) == true);
-    CHECK((i1 != i3) == true);
-    CHECK((i2 != i6) == true);
-}
+
 TEST_CASE("Test can compare BigInts for > inequality") {
     BigInt i1("12345");
     BigInt i2("54321");
@@ -48,36 +37,55 @@ TEST_CASE("Test can compare BigInts for > inequality") {
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
+    
     CHECK((i2 > i5) == false);
     CHECK((i2 > i1) == true);
     CHECK((i4 > i1) == false);
     CHECK((i6 > i4) == true);
 }
-TEST_CASE("Test can other compare BigInts for < inequality") {
+
+TEST_CASE("Test can compare BigInts for < inequality") {
     BigInt i1("12345");
     BigInt i2("54321");
     BigInt i3("123456");
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
-    CHECK((i2 < i5) == false);
+
+    CHECK((i1 < i1) == false);
+    CHECK((i1 < i3) == true);
     CHECK((i2 < i1) == false);
-    CHECK((i4 < i1) == true);
-    CHECK((i6 < i4) == false);
+    CHECK((i2 < i5) == false);
 }
 
-TEST_CASE("Test can other compare BigInts for <= inequality") {
+TEST_CASE("Test can compare BigInts for != inequality") {
     BigInt i1("12345");
     BigInt i2("54321");
     BigInt i3("123456");
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
-    CHECK((i2 <= i5) == true);
-    CHECK((i2 <= i1) == false);
-    CHECK((i4 <= i1) == true);
-    CHECK((i6 <= i4) == false);
+
+   CHECK((i2 != i1) == true);
+   CHECK((i3 != i4) == true);
+   CHECK((i6 != i5) == true);
+   CHECK((i1 != i3) == true);
 }
+
+TEST_CASE("Test can compare BigInts for <= inequality") {
+    BigInt i1("12345");
+    BigInt i2("54321");
+    BigInt i3("123456");
+    BigInt i4("-654321");
+    BigInt i5("54321");
+    BigInt i6("-54321");
+
+    CHECK((i3 <= i4) == false);
+    CHECK((i2 <= i6) == false);
+    CHECK((i5 <= i1) == false);
+    CHECK((i4 <= i6) == true);
+}
+
 TEST_CASE("Test can compare BigInts for >= inequality") {
     BigInt i1("12345");
     BigInt i2("54321");
@@ -85,12 +93,12 @@ TEST_CASE("Test can compare BigInts for >= inequality") {
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
-    CHECK((i2 >= i5) == true);
-    CHECK((i2 >= i1) == true);
-    CHECK((i4 >= i1) == false);
-    CHECK((i6 >= i4) == true);
+ 
+   CHECK((i2 >= i5) == true);
+   CHECK((i2 >= i1) == true);
+   CHECK((i4 >= i1) == false);
+   CHECK((i6 >= i4) == true);
 }
-
 TEST_CASE("Test can add BigInts") {
     BigInt i1("123");
     BigInt i2("321");
