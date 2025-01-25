@@ -109,3 +109,4 @@ TEST_CASE("Test can add BigInts") {
     CHECK((i1 + i2).to_string() == "444");
     CHECK((i1 + i3).to_string() == "43333");
 }
+
