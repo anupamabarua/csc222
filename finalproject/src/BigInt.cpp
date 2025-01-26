@@ -130,3 +130,52 @@ BigInt BigInt::operator+(const BigInt& num1) const {
 
     return output;
 }
+
+BigInt BigInt::operator-(const BigInt& num1) const {
+    BigInt output;
+    int carry = 0;
+    int fl = digits.length();
+    int sl = num1.digits.length();
+    if(num1>*this && !num1.negative && !negative){
+        output = num1 - *this;
+        output.negative = true;
+        return output;
+    }
+    if(num1.negative && !negative){
+        BigInt temp1 = *this;
+        BigInt temp2 = num1;
+        temp2.negative = false;
+        output = temp1 + temp2;
+        return output;
+    }
+    if(negative && !num1.negative){
+        BigInt temp1 = *this;
+        BigInt temp2 = num1;
+        temp1.negative = false;
+        output = temp1 + temp2;
+        output.negative = true;
+        return output;
+    }
+    
+    for (int i = 0; i < fl; i++) {
+        int d1 = (fl - 1 - i >= 0) ? digits[fl - 1 - i] - '0' : 0;
+        int d2 = (sl - 1 - i >= 0) ? num1.digits[sl - 1 - i] - '0' : 0;
+        
+        int curent = d1 - d2 - carry;
+        
+        if (curent < 0) {
+            curent += 10;
+            carry = 1;
+        } else {
+            carry = 0;
+        }
+        
+        output.digits.insert(output.digits.begin(), curent + '0');
+    }
+
+    while (output.digits.length() > 1 && output.digits[0] == '0') {
+        output.digits.erase(output.digits.begin());
+    }
+    output.digits.pop_back();
+    return output;
+}
